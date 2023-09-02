@@ -312,7 +312,8 @@ function isTotalPriceExceedsMaxPrice(products, maxPrice) {
     console.log("Помилка: вхідний аргумент maxPrice має бути числом.");
     return null;
   }
-  let totalPrice = products.reduce((sum, value) => sum + value);
+  let totalPrice = products.reduce((sum, value) => sum + value.price, 0);
+
   return Math.fround(totalPrice) > Math.fround(maxPrice);
 }
 
